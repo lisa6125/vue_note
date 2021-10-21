@@ -10,20 +10,31 @@
         <div class="chose-star item" @click="selectFilterStatus('like')">
           已加星號
         </div>
-        <div class="chose-dark item">
-          夜間模式
+        <div class="chose-dark item" @click="changeModel(),handleModelShow()">
+          <span v-show="bgModel === 'light'">夜間模式</span>
+          <span v-show="bgModel === 'dark'">日間模式</span>
+          
         </div>
       </div>
     </div>
 </template>
 
 <script>
-import {mapMutations} from "vuex";
+import {mapMutations,mapState} from "vuex";
 export default {
+  computed:{
+    ...mapState(["bgModel"])
+  },
   methods: {
-    ...mapMutations(["selectFilterStatus"]),
+    ...mapMutations(["selectFilterStatus","changeModel","changeModelShow"]),
     closebar () {
       this.$emit('barClose')
+    },
+    handleModelShow(){
+      this.changeModelShow(true)
+      setTimeout(()=>{
+        this.changeModelShow(false)
+      },3000)
     }
   }
 }

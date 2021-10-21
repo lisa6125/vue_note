@@ -56,7 +56,6 @@ export default {
 #content{
   width: 100%;
   min-height: calc(100vh - 60px);
-  margin-bottom: 100px;
   text-align: center;
   padding: 20px;
   box-sizing: border-box;
@@ -72,6 +71,9 @@ export default {
     letter-spacing: 10px;
     margin-top: 50px;
     margin-bottom: 30px;
+  }
+  .main-content{
+    margin-bottom: 100px;
   }
   .add-note{
     cursor: pointer;
@@ -144,7 +146,6 @@ export default {
 @media screen and (max-width:768px) {
   #content{
     padding: 5px;
-    margin-bottom: 150px;
     .title{
       font-weight: 700;
       color: #204326;

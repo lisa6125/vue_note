@@ -1,8 +1,8 @@
 <template>
     <div id="note-nav">
-      <span class="goback" @click="goBack">
+      <div class="goback" @click="goBack">
         <i class="fas fa-chevron-left"></i>
-      </span>
+      </div>
       <div class="stars" @click="changeFav">
         <div class="star-box"  v-show="item.faver">
           <i class="fas fa-star"></i>
@@ -11,13 +11,13 @@
           <i class="far fa-star"></i>
         </div>
       </div>
-      <span class="edit" v-show='!item.edit' @click="changeEdit">
+      <div class="edit" v-show='!item.edit' @click="changeEdit">
         <i class="fas fa-pen"></i>
-      </span>
-      <span class="edit" v-show='item.edit' @click="changeEdit">
+      </div>
+      <div class="edit" v-show='item.edit' @click="changeEdit">
         save
-      </span>
-      <div class="trash">
+      </div>
+      <div class="trash" @click="noteDelete">
         <i class="fas fa-trash"></i>
       </div>
     </div>
@@ -35,6 +35,9 @@ export default {
     },
     changeEdit(){
       this.$emit('navChangeEdit')
+    },
+    noteDelete(){
+      this.$emit('navNoteDelete')
     }
   }
 }
