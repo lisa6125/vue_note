@@ -35,7 +35,7 @@ export default {
       nowCurrent:'',
       disabled: false,
       msg:'test',
-      baseUrl: process.env.NODE_ENV === 'production' ? '/vue-use-tinymce' : '',
+      baseUrl: process.env.NODE_ENV === 'production' ? '/vue_note' : '',
       language: 'zh_CN',
       skin: 'oxide'
     }
